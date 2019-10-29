@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterstagram/widgets/story_icon.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'FlutterStagram'),
     );
   }
 }
@@ -59,17 +60,56 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(150),
+        child: AppBar(
+          leading: Icon(Icons.photo_camera),
+          title: Text(widget.title),
+          titleSpacing: -5,
+          backgroundColor: Colors.black,
+          actions: <Widget>[
+            Icon(Icons.live_tv),
+            SizedBox(width: 25),
+            Icon(Icons.arrow_forward_ios),
+            SizedBox(width: 15),
+          ],
+          bottom: PreferredSize(
+            preferredSize: Size.fromHeight(70),
+            child: Padding(
+              padding: EdgeInsets.all(10),
+              child: Container(
+                height: 80,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: <Widget>[
+                    StoryIcon(),
+                    SizedBox(width: 15),
+                    StoryIcon(text: 'jfushada'),
+                    SizedBox(width: 15),
+                    StoryIcon(text: 'dehamzah'),
+                    SizedBox(width: 15),
+                    StoryIcon(text: 'alexislvna'),
+                    SizedBox(width: 15),
+                    StoryIcon(text: 'darmawanarvin'),
+                    SizedBox(width: 15),
+                    StoryIcon(text: 'ffushada'),
+                    SizedBox(width: 15),
+                    StoryIcon(text: 'pungky95'),
+                    SizedBox(width: 15),
+                    StoryIcon(text: 'wahyoo.group'),
+                    SizedBox(width: 15),
+                    StoryIcon(text: 'stephanus.adrianto'),
+                    SizedBox(width: 15),
+                    StoryIcon(text: 'geraldyts'),
+                    SizedBox(width: 15),
+                    StoryIcon(text: 'aninditayrnt'),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
