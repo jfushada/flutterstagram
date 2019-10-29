@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterstagram/main_tabs_container.dart';
 import 'package:flutterstagram/widgets/story_icon.dart';
 
 void main() => runApp(MyApp());
@@ -21,13 +22,13 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'FlutterStagram'),
+      home: MainTabsContainer(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key key, this.title = 'FlutterStagram'}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
